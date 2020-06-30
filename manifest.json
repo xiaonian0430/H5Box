@@ -1,0 +1,151 @@
+{
+    "name" : "H5Box",
+    "appid" : "__UNI__43C3AF6",
+    "description" : "",
+    "versionName" : "1.0.0",
+    "versionCode" : 100,
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "kernel" : {
+            "ios" : "WKWebview" // UIWebview 或者 "WKWebview"  
+        },
+        "usingComponents" : true,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        /* 模块配置 */
+        "modules" : {},
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "schemes" : "",
+                "autoSdkPermissions" : true,
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
+            },
+            /* ios打包配置 */
+            "ios" : {
+                "urltypes" : ""
+            },
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "ad" : {},
+                "speech" : {},
+                "oauth" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/ic_launcher-72@hdpi.png",
+                    "xhdpi" : "unpackage/res/icons/ic_launcher-96@xdpi.png",
+                    "xxhdpi" : "unpackage/res/icons/ic_launcher-144@xxdpi.png",
+                    "xxxhdpi" : "unpackage/res/icons/ic_launcher-192@xxxdpi.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/icon-1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/icon-76.png",
+                        "app@2x" : "unpackage/res/icons/icon-76@2x.png",
+                        "notification" : "unpackage/res/icons/icon-20-ipad.png",
+                        "notification@2x" : "unpackage/res/icons/icon-40.png",
+                        "proapp@2x" : "unpackage/res/icons/icon-83.5@2x.png",
+                        "settings" : "unpackage/res/icons/icon-29.png",
+                        "settings@2x" : "unpackage/res/icons/icon-29@2x-ipad.png",
+                        "spotlight" : "unpackage/res/icons/icon-40.png",
+                        "spotlight@2x" : "unpackage/res/icons/icon-40@2x.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/icon-60@2x.png",
+                        "app@3x" : "unpackage/res/icons/icon-60@3x.png",
+                        "notification@2x" : "unpackage/res/icons/icon-20@2x.png",
+                        "notification@3x" : "unpackage/res/icons/icon-20@3x.png",
+                        "settings@2x" : "unpackage/res/icons/icon-29@2x.png",
+                        "settings@3x" : "unpackage/res/icons/icon-29@3x.png",
+                        "spotlight@2x" : "unpackage/res/icons/icon-40@2x.png",
+                        "spotlight@3x" : "unpackage/res/icons/icon-40@3x.png"
+                    }
+                }
+            }
+        },
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "compilerVersion" : 2
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "wx5e9a256b1c9dfc51",
+        "setting" : {
+            "urlCheck" : false
+        },
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-dingtalk" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "setting" : {
+            "urlCheck" : false
+        }
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "setting" : {
+            "urlCheck" : false
+        },
+        "appid" : "17767960"
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "setting" : {
+            "urlCheck" : false
+        },
+        "appid" : "ttcb91bd2c54ab0c2b"
+    },
+    "h5" : {
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "domain" : "http://book.com/"
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : true
+        },
+        "setting" : {
+            "urlCheck" : false
+        }
+    },
+    "uniStatistics" : {
+        "enable" : true
+    }
+}
+/* ios打包配置 *//* SDK配置 */
+
