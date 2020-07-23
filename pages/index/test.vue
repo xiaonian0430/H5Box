@@ -3,22 +3,22 @@
 		<page-head :title="title"></page-head>
 		<view class="uni-padding-wrap uni-common-mt" v-if="showVideo">
 			<view>
-				<video id="myVideo" src="https://xnall.oss-cn-hangzhou.aliyuncs.com/ets-course-app/dev/20200721/ios_10_27_13_057_movie.mp4"
+				<video id="myVideo" :src="src" 
 				 @error="videoErrorCallback" :danmu-list="danmuList" enable-danmu danmu-btn controls poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png"></video>
 			</view>
 			<!-- #ifndef MP-ALIPAY || MP-TOUTIAO -->
 			<view class="uni-list uni-common-mt">
 				<view class="uni-list-cell">
 					<view>
-						<view class="uni-label">弹幕内容</view>
+						<view class="uni-label">视频内容</view>
 					</view>
 					<view class="uni-list-cell-db">
-						<input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入弹幕内容" />
+						<input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入测试视频地址" />
 					</view>
 				</view>
 			</view>
 			<view class="uni-btn-v">
-				<button @click="sendDanmu" class="page-body-button">发送弹幕</button>
+				<button @click="sendDanmu" class="page-body-button">发送视频地址</button>
 			</view>
 			<!-- #endif -->
 		</view>
@@ -30,7 +30,7 @@
 		data() {
 			return {
 				title: '原始视频',
-				src: '',
+				src: 'https://xnall.oss-cn-hangzhou.aliyuncs.com/ets-course-app/dev/20200721/ios_10_27_13_057_movie.mp4',
 				danmuList: [{
 						text: '第 1s 出现的弹幕',
 						color: '#ff0000',
@@ -61,11 +61,13 @@
 		},
 		methods: {
 			sendDanmu: function() {
-				this.videoContext.sendDanmu({
-					text: this.danmuValue,
-					color: this.getRandomColor()
-				});
+				this.src = this.danmuValue;
 				this.danmuValue = '';
+				uni.showToast({
+				    title: '发送成功，即将播放',
+				    duration: 1000
+				});
+				this.videoContext.play();
 			},
 			videoErrorCallback: function(e) {
 				uni.showModal({

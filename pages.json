@@ -17,12 +17,6 @@
             "style" : {
 				"navigationBarTitleText": "video"
 			}
-        },
-		{
-            "path" : "pages/video2/video2",
-            "style" : {
-				"navigationBarTitleText": "video2"
-			}
         }
     ],
 	"tabBar": {
@@ -32,15 +26,11 @@
 			},
 			{
 				"pagePath": "pages/index/test",
-				"text": "测试视频"
+				"text": "测试视频1"
 			},
 			{
 				"pagePath": "pages/video/video",
-				"text": "原始视频"
-			},
-			{
-				"pagePath": "pages/video2/video2",
-				"text": "转码视频"
+				"text": "测试视频2"
 			}
 		],
 		"backgroundColor": "#ffffff",

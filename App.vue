@@ -21,6 +21,11 @@
 				console.log('platform', info.platform)
 			}
 			util.setSysInfo(info)
+			
+			uni.showToast({
+			    title: 'debug版本',
+			    duration: 2000
+			});
 		},
 		onShow: function() {
 			if (config.debug) console.log('App Show')

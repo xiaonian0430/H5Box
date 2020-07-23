@@ -11,7 +11,9 @@
         <button class="btn" @click="fullScreen">全屏</button>
         <button class="btn" @click="exitFullScreen">退出全屏</button>
         <button class="btn" @click="playbackRate">设置倍速</button>
-        <button class="btn" @click="sendDanmu">发送弹幕</button>
+        
+		<input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入测试视频地址" />
+		<button class="btn" @click="sendDanmu">发送测试视频地址</button>
     </div>
 </template>
 
@@ -24,7 +26,8 @@
                 text: '原始视频',
                 color: '#FF0000',
                 time: 9
-            }]
+            }],
+			danmuValue: ''
         },
         onReady() {
             this.context = uni.createVideoContext("video1", this);
@@ -72,10 +75,13 @@
                 this.context.exitFullScreen();
             },
             sendDanmu() {
-                this.context.sendDanmu({
-                    text: '要显示的弹幕文本',
-                    color: '#FF0000'
-                });
+                this.src = this.danmuValue;
+                this.danmuValue = '';
+				uni.showToast({
+				    title: '发送成功，即将播放',
+				    duration: 1000
+				});
+				this.context.play();
             },
             playbackRate() {
                 this.context.playbackRate(2);
