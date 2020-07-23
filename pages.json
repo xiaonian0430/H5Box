@@ -3,22 +3,44 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "index"
 			}
-		}
-	],
+		},
+		{
+			"path": "pages/index/test",
+			"style": {
+				"navigationBarTitleText": "test"
+			}
+		},
+		{
+            "path" : "pages/video/video",
+            "style" : {
+				"navigationBarTitleText": "video"
+			}
+        },
+		{
+            "path" : "pages/video2/video2",
+            "style" : {
+				"navigationBarTitleText": "video2"
+			}
+        }
+    ],
 	"tabBar": {
 		"list": [{
 				"pagePath": "pages/index/index",
-				"text": "1",
-				"iconPath": "static/images/home.png",
-				"selectedIconPath": "static/images/home-selected.png"
+				"text": "首页"
 			},
 			{
-				"pagePath": "pages/index/index",
-				"text": "2",
-				"iconPath": "static/images/home.png",
-				"selectedIconPath": "static/images/home-selected.png"
+				"pagePath": "pages/index/test",
+				"text": "测试视频"
+			},
+			{
+				"pagePath": "pages/video/video",
+				"text": "原始视频"
+			},
+			{
+				"pagePath": "pages/video2/video2",
+				"text": "转码视频"
 			}
 		],
 		"backgroundColor": "#ffffff",
@@ -27,7 +49,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "ShareKnow",
+		"navigationBarTitleText": "infobird",
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#FFFFFF",
 		"navigationStyle": "custom"
