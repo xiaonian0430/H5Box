@@ -12,7 +12,7 @@
         <button class="btn" @click="exitFullScreen">退出全屏</button>
         <button class="btn" @click="playbackRate">设置倍速</button>
         
-		<input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入测试视频地址" />
+		<input @input="getUrl" v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入测试视频地址" />
 		<button class="btn" @click="sendDanmu">发送测试视频地址</button>
     </div>
 </template>
@@ -20,8 +20,8 @@
 <script>
     export default {
         data: {
-            src: "https://xnall.oss-cn-hangzhou.aliyuncs.com/ets-course-app/dev/20200721/ios_10_27_13_057_movie.mp4",
-            fil: true,
+            src: "https://xnall.oss-cn-hangzhou.aliyuncs.com/ets-course-app/dev/2020-07-20%2015:16:19:756/movie.mp4",
+			fil: true,
             list: [{
                 text: '原始视频',
                 color: '#FF0000',
@@ -74,11 +74,14 @@
             exitFullScreen() {
                 this.context.exitFullScreen();
             },
+			getUrl:function(event){
+				// 绕过v-model 获取input输入框的值  
+				this.src = encodeURI(decodeURI(event.detail.value))
+				console.log(this.src)
+				this.context.stop()
+			},
             sendDanmu() {
-				this.context.stop();
-                this.src = this.danmuValue;
-                this.danmuValue = '';
-				this.context.play();
+				this.context.play()
             },
             playbackRate() {
                 this.context.playbackRate(2);

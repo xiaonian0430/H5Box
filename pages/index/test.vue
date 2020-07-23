@@ -13,7 +13,7 @@
 						<view class="uni-label">视频内容</view>
 					</view>
 					<view class="uni-list-cell-db">
-						<input v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入测试视频地址" />
+						<input @input="getUrl" v-model="danmuValue" class="uni-input" type="text" placeholder="在此处输入测试视频地址" />
 					</view>
 				</view>
 			</view>
@@ -30,7 +30,7 @@
 		data() {
 			return {
 				title: '原始视频',
-				src: 'https://xnall.oss-cn-hangzhou.aliyuncs.com/ets-course-app/dev/20200721/ios_10_27_13_057_movie.mp4',
+				src: 'https://xnall.oss-cn-hangzhou.aliyuncs.com/ets-course-app/dev/2020-07-20%2015:16:19:756/movie.mp4',
 				danmuList: [{
 						text: '第 1s 出现的弹幕',
 						color: '#ff0000',
@@ -60,11 +60,15 @@
       // #endif
 		},
 		methods: {
+			getUrl:function(event){
+				// 绕过v-model 获取input输入框的值  
+				this.src = encodeURI(decodeURI(event.detail.value))
+				console.log(this.src)
+				this.videoContext.stop()
+			},
 			sendDanmu: function() {
-				this.videoContext.stop();
-				this.src = this.danmuValue;
-				this.danmuValue = '';
-				// this.videoContext.play();
+				//this.src = this.danmuValue
+				this.videoContext.play()
 			},
 			videoErrorCallback: function(e) {
 				uni.showModal({
