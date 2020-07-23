@@ -63,10 +63,6 @@
 			sendDanmu: function() {
 				this.src = this.danmuValue;
 				this.danmuValue = '';
-				uni.showToast({
-				    title: '发送成功，即将播放',
-				    duration: 1000
-				});
 				this.videoContext.play();
 			},
 			videoErrorCallback: function(e) {
