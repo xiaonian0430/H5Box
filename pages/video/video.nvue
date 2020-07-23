@@ -75,6 +75,7 @@
                 this.context.exitFullScreen();
             },
             sendDanmu() {
+				this.context.stop();
                 this.src = this.danmuValue;
                 this.danmuValue = '';
 				this.context.play();

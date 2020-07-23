@@ -4,7 +4,7 @@
 		<view class="uni-padding-wrap uni-common-mt" v-if="showVideo">
 			<view>
 				<video id="myVideo" :src="src" 
-				 @error="videoErrorCallback" :danmu-list="danmuList" enable-danmu danmu-btn controls poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png"></video>
+				 @error="videoErrorCallback" :danmu-list="danmuList" enable-danmu danmu-btn controls poster=""></video>
 			</view>
 			<!-- #ifndef MP-ALIPAY || MP-TOUTIAO -->
 			<view class="uni-list uni-common-mt">
@@ -61,9 +61,10 @@
 		},
 		methods: {
 			sendDanmu: function() {
+				this.videoContext.stop();
 				this.src = this.danmuValue;
 				this.danmuValue = '';
-				this.videoContext.play();
+				// this.videoContext.play();
 			},
 			videoErrorCallback: function(e) {
 				uni.showModal({
