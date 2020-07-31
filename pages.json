@@ -7,15 +7,21 @@
 			}
 		},
 		{
-			"path": "pages/index/test",
+			"path": "pages/video/swiper",
 			"style": {
-				"navigationBarTitleText": "test"
+				"navigationBarTitleText": "swiper"
 			}
 		},
 		{
             "path" : "pages/video/video",
             "style" : {
 				"navigationBarTitleText": "video"
+			}
+        },
+		{
+            "path" : "pages/voice/voice",
+            "style" : {
+				"navigationBarTitleText": "voice"
 			}
         }
     ],
@@ -25,12 +31,16 @@
 				"text": "首页"
 			},
 			{
-				"pagePath": "pages/index/test",
-				"text": "测试视频1"
+				"pagePath": "pages/video/swiper",
+				"text": "测试播放"
 			},
 			{
 				"pagePath": "pages/video/video",
-				"text": "测试视频2"
+				"text": "录像测试"
+			},
+			{
+				"pagePath": "pages/voice/voice",
+				"text": "录音测试"
 			}
 		],
 		"backgroundColor": "#ffffff",
